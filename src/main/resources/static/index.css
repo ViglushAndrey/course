@@ -1,0 +1,88 @@
+body{
+    background: gainsboro;
+}
+
+.sizeBox{
+    position: absolute;
+    width: 1000px;
+    height: 1300px;
+    left: 420px;
+    background: #FFFFFF;
+}
+
+.Uh{
+    font-weight: normal;
+}
+.Uh1{
+    font-weight: normal;
+    margin-left: 200px;
+}
+.inp{
+    text-align: center;
+}
+.spes{
+    font-weight: normal;
+    margin-left: -145px;
+}
+.spesinline{
+    font-weight: normal;
+    margin-left: 310px;
+}
+.shifr-sometext{
+    font-weight: normal;
+    margin-left: 200px;
+}
+
+input{
+    outline: none;
+    border: 0px;
+    font-size: 18px;
+}
+
+.inputUnl{
+    text-decoration: underline;
+}
+
+.name{
+    text-decoration: underline;
+    margin-left: 257px;
+}
+
+.inpuln{
+    text-decoration: underline;
+    text-align: center;
+}
+
+.nameHelp{
+    margin-left: 300px;
+    font-weight: normal;
+}
+
+.Uh2{
+    font-weight: normal;
+    margin-left: 360px;
+}
+
+.nameClassK{
+    text-decoration: underline;
+
+}
+
+.normkontrol{
+    margin-left: 180px;
+    font-weight: normal
+}
+
+.normkontrolinput{
+    text-decoration: underline;
+    font-weight: normal
+}
+
+.shifr-sometext2{
+    font-weight: normal;
+    margin-left: 20px
+}
+
+.edittoex{
+    margin-left: 180px;
+}
