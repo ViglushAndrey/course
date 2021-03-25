@@ -10,7 +10,7 @@ import java.util.List;
  * course.IOfficerDAO
  *
  * @Autor: Andrey
- * @DateTime: 24.03.2021|13:57
+ * @DateTime: 8.03.2021|13:57
  * @Version: IOfficerDAO: 1.0
  */
 public interface IOfficerDAO {

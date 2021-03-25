@@ -10,7 +10,7 @@ import java.util.Spliterator;
  * course.IOffiserService
  *
  * @Autor: Andrey
- * @DateTime: 24.03.2021|13:35
+ * @DateTime: 8.03.2021|13:35
  * @Version: IOffiserService: 1.0
  */
 public interface IOffiserService {
