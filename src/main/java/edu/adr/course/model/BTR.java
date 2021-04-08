@@ -13,23 +13,29 @@ import java.util.Objects;
 public class BTR {
     private String id;
     private String name;
-    private int capaciry;
-    private String osoboviySklad;
+    private int osoboviySklad;
     private String type;
     private String armament;
-    private int nubmerOfWheels;
+    private String combatWeight;
 
     public BTR() {
     }
 
-    public BTR(String id, String name, int capaciry, String osoboviySklad, String type, String armament, int nubmerOfWheels) {
-        this.id = id;
+    public BTR(String name, int osoboviySklad, String type, String armament, String combatWeight) {
         this.name = name;
-        this.capaciry = capaciry;
         this.osoboviySklad = osoboviySklad;
         this.type = type;
         this.armament = armament;
-        this.nubmerOfWheels = nubmerOfWheels;
+        this.combatWeight = combatWeight;
+    }
+
+    public BTR(String id, String name, int osoboviySklad, String type, String armament, String combatWeight) {
+        this.id = id;
+        this.name = name;
+        this.osoboviySklad = osoboviySklad;
+        this.type = type;
+        this.armament = armament;
+        this.combatWeight = combatWeight;
     }
 
     public String getId() {
@@ -48,19 +54,11 @@ public class BTR {
         this.name = name;
     }
 
-    public int getCapaciry() {
-        return capaciry;
-    }
-
-    public void setCapaciry(int capaciry) {
-        this.capaciry = capaciry;
-    }
-
-    public String getOsoboviySklad() {
+    public int getOsoboviySklad() {
         return osoboviySklad;
     }
 
-    public void setOsoboviySklad(String osoboviySklad) {
+    public void setOsoboviySklad(int osoboviySklad) {
         this.osoboviySklad = osoboviySklad;
     }
 
@@ -80,12 +78,12 @@ public class BTR {
         this.armament = armament;
     }
 
-    public int getNubmerOfWheels() {
-        return nubmerOfWheels;
+    public String getCombatWeight() {
+        return combatWeight;
     }
 
-    public void setNubmerOfWheels(int nubmerOfWheels) {
-        this.nubmerOfWheels = nubmerOfWheels;
+    public void setCombatWeight(String combatWeight) {
+        this.combatWeight = combatWeight;
     }
 
     @Override
@@ -93,12 +91,12 @@ public class BTR {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BTR btr = (BTR) o;
-        return id.equals(btr.id);
+        return getId().equals(btr.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
@@ -106,11 +104,10 @@ public class BTR {
         return "BTR{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", capaciry=" + capaciry +
-                ", osoboviySklad='" + osoboviySklad + '\'' +
+                ", osoboviySklad=" + osoboviySklad +
                 ", type='" + type + '\'' +
                 ", armament='" + armament + '\'' +
-                ", nubmerOfWheels=" + nubmerOfWheels +
+                ", additionalWeapons='" + combatWeight + '\'' +
                 '}';
     }
 }

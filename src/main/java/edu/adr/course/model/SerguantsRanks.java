@@ -10,4 +10,8 @@ package edu.adr.course.model;
  */
 public enum SerguantsRanks {
 
+    Сержант,
+    СтаршийСержант,
+    ГоловнийСержант
+
 }

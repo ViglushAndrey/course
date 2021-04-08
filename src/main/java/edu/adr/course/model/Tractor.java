@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Tractor {
     private String id;
     private String name;
-    private String weight;
+    private double weight;
     private int maximumSpeed;
     private String liftingCapacity;
     private String bodyType;
@@ -21,7 +21,15 @@ public class Tractor {
     public Tractor() {
     }
 
-    public Tractor(String id, String name, String weight, int maximumSpeed, String liftingCapacity, String bodyType) {
+    public Tractor(String name, double weight, int maximumSpeed, String liftingCapacity, String bodyType) {
+        this.name = name;
+        this.weight = weight;
+        this.maximumSpeed = maximumSpeed;
+        this.liftingCapacity = liftingCapacity;
+        this.bodyType = bodyType;
+    }
+
+    public Tractor(String id, String name, double weight, int maximumSpeed, String liftingCapacity, String bodyType) {
         this.id = id;
         this.name = name;
         this.weight = weight;
@@ -46,11 +54,11 @@ public class Tractor {
         this.name = name;
     }
 
-    public String getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 

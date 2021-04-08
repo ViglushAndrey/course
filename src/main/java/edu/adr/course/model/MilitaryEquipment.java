@@ -1,5 +1,7 @@
 package edu.adr.course.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -12,19 +14,38 @@ import java.util.Objects;
  */
 public class MilitaryEquipment {
     private String id;
-    private String types;
-    private int number;
+   // private String types;
+
     private Tanks tanks;
+    private int numberOfTanks;
     private BMP bmp;
+    private int numberOfBmp;
     private BTR btr;
+    private int numberOfBtr;
+    private int totalMilitaryEquipment;
 
     public MilitaryEquipment() {
     }
 
-    public MilitaryEquipment(String id, String types, int number) {
+    public MilitaryEquipment(Tanks tanks, int numberOfTanks, BMP bmp, int numberOfBmp, BTR btr, int numberOfBtr, int totalMilitaryEquipment) {
+        this.tanks = tanks;
+        this.numberOfTanks = numberOfTanks;
+        this.bmp = bmp;
+        this.numberOfBmp = numberOfBmp;
+        this.btr = btr;
+        this.numberOfBtr = numberOfBtr;
+        this.totalMilitaryEquipment = totalMilitaryEquipment;
+    }
+
+    public MilitaryEquipment(String id, Tanks tanks, int numberOfTanks, BMP bmp, int numberOfBmp, BTR btr, int numberOfBtr, int totalMilitaryEquipment) {
         this.id = id;
-        this.types = types;
-        this.number = number;
+        this.tanks = tanks;
+        this.numberOfTanks = numberOfTanks;
+        this.bmp = bmp;
+        this.numberOfBmp = numberOfBmp;
+        this.btr = btr;
+        this.numberOfBtr = numberOfBtr;
+        this.totalMilitaryEquipment = totalMilitaryEquipment;
     }
 
     public String getId() {
@@ -35,20 +56,60 @@ public class MilitaryEquipment {
         this.id = id;
     }
 
-    public String getTypes() {
-        return types;
+    public Tanks getTanks() {
+        return tanks;
     }
 
-    public void setTypes(String types) {
-        this.types = types;
+    public void setTanks(Tanks tanks) {
+        this.tanks = tanks;
     }
 
-    public int getNumber() {
-        return number;
+    public int getNumberOfTanks() {
+        return numberOfTanks;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNumberOfTanks(int numberOfTanks) {
+        this.numberOfTanks = numberOfTanks;
+    }
+
+    public BMP getBmp() {
+        return bmp;
+    }
+
+    public void setBmp(BMP bmp) {
+        this.bmp = bmp;
+    }
+
+    public int getNumberOfBmp() {
+        return numberOfBmp;
+    }
+
+    public void setNumberOfBmp(int numberOfBmp) {
+        this.numberOfBmp = numberOfBmp;
+    }
+
+    public BTR getBtr() {
+        return btr;
+    }
+
+    public void setBtr(BTR btr) {
+        this.btr = btr;
+    }
+
+    public int getNumberOfBtr() {
+        return numberOfBtr;
+    }
+
+    public void setNumberOfBtr(int numberOfBtr) {
+        this.numberOfBtr = numberOfBtr;
+    }
+
+    public int getTotalMilitaryEquipment() {
+        return totalMilitaryEquipment;
+    }
+
+    public void setTotalMilitaryEquipment(int totalMilitaryEquipment) {
+        this.totalMilitaryEquipment = totalMilitaryEquipment;
     }
 
     @Override
@@ -56,20 +117,25 @@ public class MilitaryEquipment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MilitaryEquipment that = (MilitaryEquipment) o;
-        return id.equals(that.id);
+        return getId().equals(that.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
     public String toString() {
         return "MilitaryEquipment{" +
                 "id='" + id + '\'' +
-                ", types='" + types + '\'' +
-                ", number=" + number +
+                ", tanks=" + tanks +
+                ", numberOfTanks=" + numberOfTanks +
+                ", bmp=" + bmp +
+                ", numberOfBmp=" + numberOfBmp +
+                ", btr=" + btr +
+                ", numberOfBtr=" + numberOfBtr +
+                ", totalMilitaryEquipment=" + totalMilitaryEquipment +
                 '}';
     }
 }

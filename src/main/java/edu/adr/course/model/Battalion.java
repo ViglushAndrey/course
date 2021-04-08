@@ -19,7 +19,7 @@ public class Battalion {
     private Armament armament;
     private Generals generals;
     private Officers officers;
-    private edu.adr.course.model.Objects objects;
+    private Obj obj;
     private Permanent_dislocation permanentDislocation;
     private Temporary_dislocation temporaryDislocation;
 

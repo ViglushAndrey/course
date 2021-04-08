@@ -19,6 +19,12 @@ public class Automats {
     public Automats() {
     }
 
+    public Automats(String model, String caliber, int numberOfCartridgesInMagazine) {
+        this.model = model;
+        this.caliber = caliber;
+        this.numberOfCartridgesInMagazine = numberOfCartridgesInMagazine;
+    }
+
     public Automats(String id, String model, String caliber, int numberOfCartridgesInMagazine) {
         this.id = id;
         this.model = model;

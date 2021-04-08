@@ -1,7 +1,6 @@
 package edu.adr.course.model;
 
 import java.util.Objects;
-import java.util.PrimitiveIterator;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,7 +19,7 @@ public class Army {
     private Generals generals;
     private Permanent_dislocation permanentDislocation;
     private Temporary_dislocation temporaryDislocation;
-    private edu.adr.course.model.Objects objects;
+    private Obj obj;
 
     public Army() {
     }

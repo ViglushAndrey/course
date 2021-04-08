@@ -1,5 +1,6 @@
 package edu.adr.course.model;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -13,21 +14,38 @@ import java.util.Objects;
 public class Vzvods {
     private String id;
     private String name;
-    private String osoboviySklad;
-    private Viddilenia viddilenia;
+    private int osoboviySklad;
+    private List<Viddilenia> viddilenia;
     private Armament armament;
     private Serguants serguants;
-    private edu.adr.course.model.Objects objects;
+    private Obj obj;
     private Permanent_dislocation permanentDislocation;
     private Temporary_dislocation temporaryDislocation;
 
     public Vzvods() {
     }
 
-    public Vzvods(String id, String name, String osoboviySklad) {
+    public Vzvods(String name, int osoboviySklad, List<Viddilenia> viddilenia, Armament armament, Serguants serguants, Obj obj, Permanent_dislocation permanentDislocation, Temporary_dislocation temporaryDislocation) {
+        this.name = name;
+        this.osoboviySklad = osoboviySklad;
+        this.viddilenia = viddilenia;
+        this.armament = armament;
+        this.serguants = serguants;
+        this.obj = obj;
+        this.permanentDislocation = permanentDislocation;
+        this.temporaryDislocation = temporaryDislocation;
+    }
+
+    public Vzvods(String id, String name, int osoboviySklad, List<Viddilenia> viddilenia, Armament armament, Serguants serguants, Obj obj, Permanent_dislocation permanentDislocation, Temporary_dislocation temporaryDislocation) {
         this.id = id;
         this.name = name;
         this.osoboviySklad = osoboviySklad;
+        this.viddilenia = viddilenia;
+        this.armament = armament;
+        this.serguants = serguants;
+        this.obj = obj;
+        this.permanentDislocation = permanentDislocation;
+        this.temporaryDislocation = temporaryDislocation;
     }
 
     public String getId() {
@@ -46,12 +64,60 @@ public class Vzvods {
         this.name = name;
     }
 
-    public String getOsoboviySklad() {
+    public int getOsoboviySklad() {
         return osoboviySklad;
     }
 
-    public void setOsoboviySklad(String osoboviySklad) {
+    public void setOsoboviySklad(int osoboviySklad) {
         this.osoboviySklad = osoboviySklad;
+    }
+
+    public List<Viddilenia> getViddilenia() {
+        return viddilenia;
+    }
+
+    public void setViddilenia(List<Viddilenia> viddilenia) {
+        this.viddilenia = viddilenia;
+    }
+
+    public Armament getArmament() {
+        return armament;
+    }
+
+    public void setArmament(Armament armament) {
+        this.armament = armament;
+    }
+
+    public Serguants getSerguants() {
+        return serguants;
+    }
+
+    public void setSerguants(Serguants serguants) {
+        this.serguants = serguants;
+    }
+
+    public Obj getObj() {
+        return obj;
+    }
+
+    public void setObj(Obj obj) {
+        this.obj = obj;
+    }
+
+    public Permanent_dislocation getPermanentDislocation() {
+        return permanentDislocation;
+    }
+
+    public void setPermanentDislocation(Permanent_dislocation permanentDislocation) {
+        this.permanentDislocation = permanentDislocation;
+    }
+
+    public Temporary_dislocation getTemporaryDislocation() {
+        return temporaryDislocation;
+    }
+
+    public void setTemporaryDislocation(Temporary_dislocation temporaryDislocation) {
+        this.temporaryDislocation = temporaryDislocation;
     }
 
     @Override
@@ -59,12 +125,12 @@ public class Vzvods {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vzvods vzvods = (Vzvods) o;
-        return id.equals(vzvods.id);
+        return getId().equals(vzvods.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
@@ -73,6 +139,12 @@ public class Vzvods {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", osoboviySklad='" + osoboviySklad + '\'' +
+                ", viddilenia=" + viddilenia +
+                ", armament=" + armament +
+                ", serguants=" + serguants +
+                ", obj=" + obj +
+                ", permanentDislocation=" + permanentDislocation +
+                ", temporaryDislocation=" + temporaryDislocation +
                 '}';
     }
 }

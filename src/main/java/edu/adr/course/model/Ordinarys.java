@@ -1,5 +1,6 @@
 package edu.adr.course.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -14,22 +15,32 @@ import java.util.Objects;
 public class Ordinarys {
     private String id;
     private String name;
-    private LocalDateTime bDay;
+    private LocalDate bDay;
     private String speciality;
-    private LocalDateTime dateOfAssignmentOfAnOfficerRank;
+    private LocalDate dateOfAssignmentOfAnOfficerRank;
     private String awards;
     private OrdinaryRanks ordinaryRanks;
 
     public Ordinarys() {
     }
 
-    public Ordinarys(String id, String name, LocalDateTime bDay, String speciality, LocalDateTime dateOfAssignmentOfAnOfficerRank, String awards) {
+    public Ordinarys(String name, LocalDate bDay, String speciality, LocalDate dateOfAssignmentOfAnOfficerRank, String awards, OrdinaryRanks ordinaryRanks) {
+        this.name = name;
+        this.bDay = bDay;
+        this.speciality = speciality;
+        this.dateOfAssignmentOfAnOfficerRank = dateOfAssignmentOfAnOfficerRank;
+        this.awards = awards;
+        this.ordinaryRanks = ordinaryRanks;
+    }
+
+    public Ordinarys(String id, String name, LocalDate bDay, String speciality, LocalDate dateOfAssignmentOfAnOfficerRank, String awards, OrdinaryRanks ordinaryRanks) {
         this.id = id;
         this.name = name;
         this.bDay = bDay;
         this.speciality = speciality;
         this.dateOfAssignmentOfAnOfficerRank = dateOfAssignmentOfAnOfficerRank;
         this.awards = awards;
+        this.ordinaryRanks = ordinaryRanks;
     }
 
     public String getId() {
@@ -48,11 +59,11 @@ public class Ordinarys {
         this.name = name;
     }
 
-    public LocalDateTime getbDay() {
+    public LocalDate getbDay() {
         return bDay;
     }
 
-    public void setbDay(LocalDateTime bDay) {
+    public void setbDay(LocalDate bDay) {
         this.bDay = bDay;
     }
 
@@ -64,11 +75,11 @@ public class Ordinarys {
         this.speciality = speciality;
     }
 
-    public LocalDateTime getDateOfAssignmentOfAnOfficerRank() {
+    public LocalDate getDateOfAssignmentOfAnOfficerRank() {
         return dateOfAssignmentOfAnOfficerRank;
     }
 
-    public void setDateOfAssignmentOfAnOfficerRank(LocalDateTime dateOfAssignmentOfAnOfficerRank) {
+    public void setDateOfAssignmentOfAnOfficerRank(LocalDate dateOfAssignmentOfAnOfficerRank) {
         this.dateOfAssignmentOfAnOfficerRank = dateOfAssignmentOfAnOfficerRank;
     }
 
@@ -80,17 +91,25 @@ public class Ordinarys {
         this.awards = awards;
     }
 
+    public OrdinaryRanks getOrdinaryRanks() {
+        return ordinaryRanks;
+    }
+
+    public void setOrdinaryRanks(OrdinaryRanks ordinaryRanks) {
+        this.ordinaryRanks = ordinaryRanks;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ordinarys ordinarys = (Ordinarys) o;
-        return id.equals(ordinarys.id);
+        return getId().equals(ordinarys.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
@@ -102,6 +121,7 @@ public class Ordinarys {
                 ", speciality='" + speciality + '\'' +
                 ", dateOfAssignmentOfAnOfficerRank=" + dateOfAssignmentOfAnOfficerRank +
                 ", awards='" + awards + '\'' +
+                ", ordinaryRanks=" + ordinaryRanks +
                 '}';
     }
 }

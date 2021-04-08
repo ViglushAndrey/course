@@ -19,6 +19,12 @@ public class Temporary_dislocation {
     public Temporary_dislocation() {
     }
 
+    public Temporary_dislocation(String temporaryDislocation, String city, String address) {
+        this.temporaryDislocation = temporaryDislocation;
+        this.city = city;
+        this.address = address;
+    }
+
     public Temporary_dislocation(String id, String temporaryDislocation, String city, String address) {
         this.id = id;
         this.temporaryDislocation = temporaryDislocation;

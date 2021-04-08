@@ -19,6 +19,12 @@ public class Permanent_dislocation {
     public Permanent_dislocation() {
     }
 
+    public Permanent_dislocation(String permanentDislocation, String city, String address) {
+        this.permanentDislocation = permanentDislocation;
+        this.city = city;
+        this.address = address;
+    }
+
     public Permanent_dislocation(String id, String permanentDislocation, String city, String address) {
         this.id = id;
         this.permanentDislocation = permanentDislocation;

@@ -15,14 +15,22 @@ public class FreightCar {
     private String id;
     private String name;
     private String bodyType;
-    private String weight;
+    private double weight;
     private String liftingCapacity;
     private int maximumSpeed;
 
     public FreightCar() {
     }
 
-    public FreightCar(String id, String name, String bodyType, String weight, String liftingCapacity, int maximumSpeed) {
+    public FreightCar(String name, String bodyType, double weight, String liftingCapacity, int maximumSpeed) {
+        this.name = name;
+        this.bodyType = bodyType;
+        this.weight = weight;
+        this.liftingCapacity = liftingCapacity;
+        this.maximumSpeed = maximumSpeed;
+    }
+
+    public FreightCar(String id, String name, String bodyType, double weight, String liftingCapacity, int maximumSpeed) {
         this.id = id;
         this.name = name;
         this.bodyType = bodyType;
@@ -55,11 +63,11 @@ public class FreightCar {
         this.bodyType = bodyType;
     }
 
-    public String getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 

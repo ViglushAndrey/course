@@ -14,8 +14,6 @@ import java.util.UUID;
 public class Armament {
 
     private String id;
-    private String type;
-    private int number;
     private Grenades grenades;
     private Pistols pistols;
     private SniperRifles sniperRifles;
@@ -27,10 +25,27 @@ public class Armament {
     public Armament() {
     }
 
-    public Armament(String id, String type, int number) {
+    public Armament (Grenades grenades, Pistols pistols, SniperRifles sniperRifles, MachinesGuns machinesGuns, Automats automats, MilitaryEquipment militaryEquipment, TransportEquipment transportEquipment) {
+
+        this.grenades = grenades;
+        this.pistols = pistols;
+        this.sniperRifles = sniperRifles;
+        this.machinesGuns = machinesGuns;
+        this.automats = automats;
+        this.militaryEquipment = militaryEquipment;
+        this.transportEquipment = transportEquipment;
+    }
+
+    public Armament(String id, Grenades grenades, Pistols pistols, SniperRifles sniperRifles, MachinesGuns machinesGuns, Automats automats, MilitaryEquipment militaryEquipment, TransportEquipment transportEquipment) {
         this.id = id;
-        this.type = type;
-        this.number = number;
+
+        this.grenades = grenades;
+        this.pistols = pistols;
+        this.sniperRifles = sniperRifles;
+        this.machinesGuns = machinesGuns;
+        this.automats = automats;
+        this.militaryEquipment = militaryEquipment;
+        this.transportEquipment = transportEquipment;
     }
 
     public String getId() {
@@ -41,20 +56,61 @@ public class Armament {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+
+    public Grenades getGrenades() {
+        return grenades;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setGrenades(Grenades grenades) {
+        this.grenades = grenades;
     }
 
-    public int getNumber() {
-        return number;
+    public Pistols getPistols() {
+        return pistols;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setPistols(Pistols pistols) {
+        this.pistols = pistols;
+    }
+
+    public SniperRifles getSniperRifles() {
+        return sniperRifles;
+    }
+
+    public void setSniperRifles(SniperRifles sniperRifles) {
+        this.sniperRifles = sniperRifles;
+    }
+
+    public MachinesGuns getMachinesGuns() {
+        return machinesGuns;
+    }
+
+    public void setMachinesGuns(MachinesGuns machinesGuns) {
+        this.machinesGuns = machinesGuns;
+    }
+
+    public Automats getAutomats() {
+        return automats;
+    }
+
+    public void setAutomats(Automats automats) {
+        this.automats = automats;
+    }
+
+    public MilitaryEquipment getMilitaryEquipment() {
+        return militaryEquipment;
+    }
+
+    public void setMilitaryEquipment(MilitaryEquipment militaryEquipment) {
+        this.militaryEquipment = militaryEquipment;
+    }
+
+    public TransportEquipment getTransportEquipment() {
+        return transportEquipment;
+    }
+
+    public void setTransportEquipment(TransportEquipment transportEquipment) {
+        this.transportEquipment = transportEquipment;
     }
 
     @Override
@@ -62,20 +118,25 @@ public class Armament {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Armament armament = (Armament) o;
-        return id.equals(armament.id);
+        return getId().equals(armament.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
     public String toString() {
         return "Armament{" +
                 "id='" + id + '\'' +
-                ", type='" + type + '\'' +
-                ", number=" + number +
+                ", grenades=" + grenades +
+                ", pistols=" + pistols +
+                ", sniperRifles=" + sniperRifles +
+                ", machinesGuns=" + machinesGuns +
+                ", automats=" + automats +
+                ", militaryEquipment=" + militaryEquipment +
+                ", transportEquipment=" + transportEquipment +
                 '}';
     }
 }

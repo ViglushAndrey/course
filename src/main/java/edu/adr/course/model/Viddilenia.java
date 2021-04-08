@@ -13,20 +13,35 @@ import java.util.Objects;
 public class Viddilenia {
     private String id;
     private String name;
-    private String osoboviySklad;
-    private Serguants serguants;
+    private int osoboviySklad;
+    //private Serguants serguants;
     private Ordinarys ordinarys;
-    private edu.adr.course.model.Objects objects;
+    private Obj obj;
     private Permanent_dislocation permanentDislocation;
     private Temporary_dislocation temporaryDislocation;
 
     public Viddilenia() {
     }
 
-    public Viddilenia(String id, String name, String osoboviySklad) {
+    public Viddilenia(String name, int osoboviySklad, Ordinarys ordinarys, Obj obj, Permanent_dislocation permanentDislocation, Temporary_dislocation temporaryDislocation) {
+        this.name = name;
+        this.osoboviySklad = osoboviySklad;
+
+        this.ordinarys = ordinarys;
+        this.obj = obj;
+        this.permanentDislocation = permanentDislocation;
+        this.temporaryDislocation = temporaryDislocation;
+    }
+
+    public Viddilenia(String id, String name, int osoboviySklad,  Ordinarys ordinarys, Obj obj, Permanent_dislocation permanentDislocation, Temporary_dislocation temporaryDislocation) {
         this.id = id;
         this.name = name;
         this.osoboviySklad = osoboviySklad;
+
+        this.ordinarys = ordinarys;
+        this.obj = obj;
+        this.permanentDislocation = permanentDislocation;
+        this.temporaryDislocation = temporaryDislocation;
     }
 
     public String getId() {
@@ -45,12 +60,46 @@ public class Viddilenia {
         this.name = name;
     }
 
-    public String getOsoboviySklad() {
+    public int getOsoboviySklad() {
         return osoboviySklad;
     }
 
-    public void setOsoboviySklad(String osoboviySklad) {
+    public void setOsoboviySklad(int osoboviySklad) {
         this.osoboviySklad = osoboviySklad;
+    }
+
+
+
+    public Ordinarys getOrdinarys() {
+        return ordinarys;
+    }
+
+    public void setOrdinarys(Ordinarys ordinarys) {
+        this.ordinarys = ordinarys;
+    }
+
+    public Obj getObj() {
+        return obj;
+    }
+
+    public void setObj(Obj obj) {
+        this.obj = obj;
+    }
+
+    public Permanent_dislocation getPermanentDislocation() {
+        return permanentDislocation;
+    }
+
+    public void setPermanentDislocation(Permanent_dislocation permanentDislocation) {
+        this.permanentDislocation = permanentDislocation;
+    }
+
+    public Temporary_dislocation getTemporaryDislocation() {
+        return temporaryDislocation;
+    }
+
+    public void setTemporaryDislocation(Temporary_dislocation temporaryDislocation) {
+        this.temporaryDislocation = temporaryDislocation;
     }
 
     @Override
@@ -58,12 +107,12 @@ public class Viddilenia {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Viddilenia that = (Viddilenia) o;
-        return id.equals(that.id);
+        return getId().equals(that.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
@@ -72,6 +121,10 @@ public class Viddilenia {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", osoboviySklad='" + osoboviySklad + '\'' +
+                ", ordinarys=" + ordinarys +
+                ", obj=" + obj +
+                ", permanentDislocation=" + permanentDislocation +
+                ", temporaryDislocation=" + temporaryDislocation +
                 '}';
     }
 }

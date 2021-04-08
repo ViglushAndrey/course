@@ -1,5 +1,7 @@
 package edu.adr.course.model;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * course.Objects
@@ -8,18 +10,18 @@ package edu.adr.course.model;
  * @DateTime: 03.03.2021|16:57
  * @Version: Objects: 1.0
  */
-public class Objects {
+public class Obj {
     private String id;
-    private String vudObject;
-    private float areaObject;
+    private List<String> typesOfBuildings;
 
-    public Objects() {
+
+    public Obj() {
     }
 
-    public Objects(String id, String vudObject, float areaObject) {
+    public Obj(String id, List<String> typesOfBuildings) {
         this.id = id;
-        this.vudObject = vudObject;
-        this.areaObject = areaObject;
+        this.typesOfBuildings = typesOfBuildings;
+
     }
 
     public String getId() {
@@ -30,28 +32,21 @@ public class Objects {
         this.id = id;
     }
 
-    public String getVudObject() {
-        return vudObject;
+    public List<String> getTypesOfBuildings() {
+        return typesOfBuildings;
     }
 
-    public void setVudObject(String vudObject) {
-        this.vudObject = vudObject;
+    public void setTypesOfBuildings(List<String> typesOfBuildings) {
+        this.typesOfBuildings = typesOfBuildings;
     }
 
-    public float getAreaObject() {
-        return areaObject;
-    }
-
-    public void setAreaObject(float areaObject) {
-        this.areaObject = areaObject;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Objects objects = (Objects) o;
-        return id.equals(objects.id);
+        Obj obj = (Obj) o;
+        return id.equals(obj.id);
     }
 
     @Override
@@ -63,8 +58,7 @@ public class Objects {
     public String toString() {
         return "Objects{" +
                 "id='" + id + '\'' +
-                ", vudObject='" + vudObject + '\'' +
-                ", areaObject=" + areaObject +
+                ", vudObject='" + typesOfBuildings + '\'' +
                 '}';
     }
 }

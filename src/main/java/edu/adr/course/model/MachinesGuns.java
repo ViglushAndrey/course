@@ -13,16 +13,22 @@ import java.util.Objects;
 public class MachinesGuns {
     private String id;
     private String model;
-    private String calibr;
+    private String caliber;
     private int numberOfCartridgesInMagazine;
 
     public MachinesGuns() {
     }
 
-    public MachinesGuns(String id, String model, String calibr, int numberOfCartridgesInMagazine) {
+    public MachinesGuns(String model, String caliber, int numberOfCartridgesInMagazine) {
+        this.model = model;
+        this.caliber = caliber;
+        this.numberOfCartridgesInMagazine = numberOfCartridgesInMagazine;
+    }
+
+    public MachinesGuns(String id, String model, String caliber, int numberOfCartridgesInMagazine) {
         this.id = id;
         this.model = model;
-        this.calibr = calibr;
+        this.caliber = caliber;
         this.numberOfCartridgesInMagazine = numberOfCartridgesInMagazine;
     }
 
@@ -42,12 +48,12 @@ public class MachinesGuns {
         this.model = model;
     }
 
-    public String getCalibr() {
-        return calibr;
+    public String getCaliber() {
+        return caliber;
     }
 
-    public void setCalibr(String calibr) {
-        this.calibr = calibr;
+    public void setCaliber(String caliber) {
+        this.caliber = caliber;
     }
 
     public int getNumberOfCartridgesInMagazine() {
@@ -76,7 +82,7 @@ public class MachinesGuns {
         return "MachinesGuns{" +
                 "id='" + id + '\'' +
                 ", model='" + model + '\'' +
-                ", calibr='" + calibr + '\'' +
+                ", calibr='" + caliber + '\'' +
                 ", numberOfCartridgesInMagazine=" + numberOfCartridgesInMagazine +
                 '}';
     }

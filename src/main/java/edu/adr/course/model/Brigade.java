@@ -17,7 +17,7 @@ public class Brigade {
     private Rota rota;
     private Armament armament;
     private Officers officers;
-    private edu.adr.course.model.Objects objects;
+    private Obj obj;
     private Permanent_dislocation permanentDislocation;
     private Temporary_dislocation temporaryDislocation;
 

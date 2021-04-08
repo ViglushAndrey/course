@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Tanks {
     private String id;
     private String name;
-    private String combatWeight;
+    private double combatWeight;
     private String enginePower;
     private String engineType;
     private int caliberOfGun;
@@ -22,7 +22,7 @@ public class Tanks {
     public Tanks() {
     }
 
-    public Tanks(String id, String name, String combatWeight, String enginePower, String engineType, int caliberOfGun, String gunModel) {
+    public Tanks(String id, String name, double combatWeight, String enginePower, String engineType, int caliberOfGun, String gunModel) {
         this.id = id;
         this.name = name;
         this.combatWeight = combatWeight;
@@ -48,11 +48,11 @@ public class Tanks {
         this.name = name;
     }
 
-    public String getCombatWeight() {
+    public double getCombatWeight() {
         return combatWeight;
     }
 
-    public void setCombatWeight(String combatWeight) {
+    public void setCombatWeight(double combatWeight) {
         this.combatWeight = combatWeight;
     }
 

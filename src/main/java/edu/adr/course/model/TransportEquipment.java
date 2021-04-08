@@ -12,16 +12,30 @@ import java.util.Objects;
  */
 public class TransportEquipment {
     private String id;
-    private int number;
     private FreightCar freightCar;
+    private int numberOfFreightCar;
     private Tractor tractor;
+    private int numberOfTractor;
+    private int totalTransportEquipment;
 
     public TransportEquipment() {
     }
 
-    public TransportEquipment(String id, int number) {
+    public TransportEquipment(FreightCar freightCar, int numberOfFreightCar, Tractor tractor, int numberOfTractor, int totalTransportEquipment) {
+        this.freightCar = freightCar;
+        this.numberOfFreightCar = numberOfFreightCar;
+        this.tractor = tractor;
+        this.numberOfTractor = numberOfTractor;
+        this.totalTransportEquipment = totalTransportEquipment;
+    }
+
+    public TransportEquipment(String id, FreightCar freightCar, int numberOfFreightCar, Tractor tractor, int numberOfTractor, int totalTransportEquipment) {
         this.id = id;
-        this.number = number;
+        this.freightCar = freightCar;
+        this.numberOfFreightCar = numberOfFreightCar;
+        this.tractor = tractor;
+        this.numberOfTractor = numberOfTractor;
+        this.totalTransportEquipment = totalTransportEquipment;
     }
 
     public String getId() {
@@ -32,12 +46,44 @@ public class TransportEquipment {
         this.id = id;
     }
 
-    public int getNumber() {
-        return number;
+    public FreightCar getFreightCar() {
+        return freightCar;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setFreightCar(FreightCar freightCar) {
+        this.freightCar = freightCar;
+    }
+
+    public int getNumberOfFreightCar() {
+        return numberOfFreightCar;
+    }
+
+    public void setNumberOfFreightCar(int numberOfFreightCar) {
+        this.numberOfFreightCar = numberOfFreightCar;
+    }
+
+    public Tractor getTractor() {
+        return tractor;
+    }
+
+    public void setTractor(Tractor tractor) {
+        this.tractor = tractor;
+    }
+
+    public int getNumberOfTractor() {
+        return numberOfTractor;
+    }
+
+    public void setNumberOfTractor(int numberOfTractor) {
+        this.numberOfTractor = numberOfTractor;
+    }
+
+    public int getTotalTransportEquipment() {
+        return totalTransportEquipment;
+    }
+
+    public void setTotalTransportEquipment(int totalTransportEquipment) {
+        this.totalTransportEquipment = totalTransportEquipment;
     }
 
     @Override
@@ -45,19 +91,23 @@ public class TransportEquipment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TransportEquipment that = (TransportEquipment) o;
-        return id.equals(that.id);
+        return getId().equals(that.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
     public String toString() {
         return "TransportEquipment{" +
                 "id='" + id + '\'' +
-                ", number=" + number +
+                ", freightCar=" + freightCar +
+                ", numberOfFreightCar=" + numberOfFreightCar +
+                ", tractor=" + tractor +
+                ", numberOfTractor=" + numberOfTractor +
+                ", totalTransportEquipment=" + totalTransportEquipment +
                 '}';
     }
 }

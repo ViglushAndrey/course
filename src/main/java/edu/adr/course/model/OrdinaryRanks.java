@@ -10,4 +10,7 @@ package edu.adr.course.model;
  */
 public enum OrdinaryRanks {
 
+    Солдат,
+    СтаршийСолдат
+
 }

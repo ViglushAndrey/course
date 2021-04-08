@@ -13,22 +13,25 @@ import java.util.Objects;
 public class BMP {
     private String id;
     private String name;
-    private int capaciry;
-    private String osoboviySklad;
-    private String artSystem;
-    private String armorPenetrationParameters;
+    private int osoboviySklad;
+    private String armament;
     private String combatWeight;
 
     public BMP() {
     }
 
-    public BMP(String id, String name, int capaciry, String osoboviySklad, String artSystem, String armorPenetrationParameters, String combatWeight) {
+    public BMP(String name, int osoboviySklad, String armament, String combatWeight) {
+        this.name = name;
+        this.osoboviySklad = osoboviySklad;
+        this.armament = armament;
+        this.combatWeight = combatWeight;
+    }
+
+    public BMP(String id, String name, int osoboviySklad, String armament, String combatWeight) {
         this.id = id;
         this.name = name;
-        this.capaciry = capaciry;
         this.osoboviySklad = osoboviySklad;
-        this.artSystem = artSystem;
-        this.armorPenetrationParameters = armorPenetrationParameters;
+        this.armament = armament;
         this.combatWeight = combatWeight;
     }
 
@@ -48,36 +51,20 @@ public class BMP {
         this.name = name;
     }
 
-    public int getCapaciry() {
-        return capaciry;
-    }
-
-    public void setCapaciry(int capaciry) {
-        this.capaciry = capaciry;
-    }
-
-    public String getOsoboviySklad() {
+    public int getOsoboviySklad() {
         return osoboviySklad;
     }
 
-    public void setOsoboviySklad(String osoboviySklad) {
+    public void setOsoboviySklad(int osoboviySklad) {
         this.osoboviySklad = osoboviySklad;
     }
 
-    public String getArtSystem() {
-        return artSystem;
+    public String getArmament() {
+        return armament;
     }
 
-    public void setArtSystem(String artSystem) {
-        this.artSystem = artSystem;
-    }
-
-    public String getArmorPenetrationParameters() {
-        return armorPenetrationParameters;
-    }
-
-    public void setArmorPenetrationParameters(String armorPenetrationParameters) {
-        this.armorPenetrationParameters = armorPenetrationParameters;
+    public void setArmament(String armament) {
+        this.armament = armament;
     }
 
     public String getCombatWeight() {
@@ -106,10 +93,8 @@ public class BMP {
         return "BMP{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", capaciry=" + capaciry +
                 ", osoboviySklad='" + osoboviySklad + '\'' +
-                ", artSystem='" + artSystem + '\'' +
-                ", armorPenetrationParameters='" + armorPenetrationParameters + '\'' +
+                ", artSystem='" + armament + '\'' +
                 ", combatWeight='" + combatWeight + '\'' +
                 '}';
     }
